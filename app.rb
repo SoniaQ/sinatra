@@ -9,6 +9,13 @@
     "...can you guess? But why?"
   end
 
-  get '/cat' do
+  get '/random-cat' do
+    @name = ["Slim Shady", "Popsicle", "Batman"].sample
+    erb(:index)
+  end
+
+  get '/named-cat' do
+    p params
+    @name = params[:name]
     erb(:index)
   end
